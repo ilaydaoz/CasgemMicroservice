@@ -61,10 +61,7 @@ namespace CasgemMicroservice.Services.Catalog.Services.CategoryServices
             {
                 return Response<NoContent>.Fail("Güncellenecek veri bulunumadı", 400);
             }
-            else
-            {
                 return Response<NoContent>.Success(204);
-            }
         }
     }
 }
