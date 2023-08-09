@@ -2,7 +2,11 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using CasgemMicroservice.IdentityServer.Data;
+using CasgemMicroservice.IdentityServer.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -44,7 +48,29 @@ namespace CasgemMicroservice.IdentityServer
                 }
 
                 var host = CreateHostBuilder(args).Build();
+                using (var scop = host.Services.CreateScope())
+                {
+                    var servisProvider = scop.ServiceProvider;
 
+                    var applicationDbContext =
+                        servisProvider.GetRequiredService<ApplicationDbContext>();
+
+                    applicationDbContext.Database.Migrate();
+
+                    var usermanager =
+                        servisProvider.GetRequiredService<UserManager<ApplicationUser>>();
+                    if (!usermanager.Users.Any())
+                    {
+                        usermanager.CreateAsync(new ApplicationUser
+                        {
+                            UserName = "ilayda",
+                            Email = "ilaydaozken@gmail.com",
+                            City = "mersin",
+                            Country = "Turkiye",
+                            NameSurname = "ilayda ozken",
+                        }, "123456Aa*").Wait();
+                    }
+                }
                 if (seed)
                 {
                     Log.Information("Seeding database...");
