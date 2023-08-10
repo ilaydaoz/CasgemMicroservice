@@ -1,4 +1,4 @@
-﻿namespace CasgemMicroservice.Basket.Services
+﻿namespace CasgemMicroservice.Shared.Services
 {
     public interface ISharedIdentityService
     {

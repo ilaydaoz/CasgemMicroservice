@@ -13,7 +13,7 @@ namespace CasgemMicroservice.Basket.Services
             _host = host;
             _port = port;
         }
-        public void Connect() => _connectionMultiplexer = ConnectionMultiplexer.Connect($"{_host}:{_host}");
+        public void Connect() => _connectionMultiplexer = ConnectionMultiplexer.Connect($"{_host}:{_port}");
 
         public IDatabase GetDb(int db = 1) => _connectionMultiplexer.GetDatabase(db); 
     }

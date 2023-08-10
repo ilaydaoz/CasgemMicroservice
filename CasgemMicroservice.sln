@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Shared",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.IdentityServer", "IdentityServer\CasgemMicroservice.IdentityServer\CasgemMicroservice.IdentityServer.csproj", "{335254DD-0C6C-4CA8-BDF1-845FE387F9BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.PhotoStock", "CasgemMicroservice.PhotoStock\CasgemMicroservice.PhotoStock.csproj", "{FA783B21-BA1C-4769-9E69-B2A1BF046F3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.PhotoStock", "CasgemMicroservice.PhotoStock\CasgemMicroservice.PhotoStock.csproj", "{FA783B21-BA1C-4769-9E69-B2A1BF046F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Basket", "Services\Basket\CasgemMicroservice.Basket\CasgemMicroservice.Basket.csproj", "{7A0AD83C-BB81-4CDE-81D3-99A992350E9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Basket", "Services\Basket\CasgemMicroservice.Basket\CasgemMicroservice.Basket.csproj", "{7A0AD83C-BB81-4CDE-81D3-99A992350E9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Discount", "Services\Discount\CasgemMicroservice.Services.Discount\CasgemMicroservice.Services.Discount.csproj", "{C06E6C38-3FD0-4D14-8998-F18146CFD3DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{7A0AD83C-BB81-4CDE-81D3-99A992350E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A0AD83C-BB81-4CDE-81D3-99A992350E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A0AD83C-BB81-4CDE-81D3-99A992350E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06E6C38-3FD0-4D14-8998-F18146CFD3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06E6C38-3FD0-4D14-8998-F18146CFD3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06E6C38-3FD0-4D14-8998-F18146CFD3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06E6C38-3FD0-4D14-8998-F18146CFD3DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{335254DD-0C6C-4CA8-BDF1-845FE387F9BC} = {4F912B96-FD83-459E-9F87-AF7F6F123EB1}
 		{FA783B21-BA1C-4769-9E69-B2A1BF046F3F} = {8D27B755-4F7E-4860-8499-5C12224FA40C}
 		{7A0AD83C-BB81-4CDE-81D3-99A992350E9C} = {FF1971A6-61E0-4AA2-AE40-CFC49A4B6CF6}
+		{C06E6C38-3FD0-4D14-8998-F18146CFD3DC} = {A6C63CE6-E414-4575-8037-4607BB3517D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F661F97C-33B7-49C2-99A0-884E03A54700}

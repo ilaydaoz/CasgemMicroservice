@@ -1,4 +1,6 @@
-﻿namespace CasgemMicroservice.Basket.Services
+﻿using Microsoft.AspNetCore.Http;
+
+namespace CasgemMicroservice.Shared.Services
 {
     public class SharedIdentityService : ISharedIdentityService
     {

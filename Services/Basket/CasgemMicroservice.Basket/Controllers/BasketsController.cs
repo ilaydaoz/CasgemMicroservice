@@ -1,5 +1,6 @@
 ﻿using CasgemMicroservice.Basket.Dto;
 using CasgemMicroservice.Basket.Services;
+using CasgemMicroservice.Shared.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
