@@ -1,34 +1,67 @@
-﻿using CasgemMicroservice.Services.Discount.Dtos;
+﻿using AutoMapper;
+using CasgemMicroservice.Services.Discount.Context;
+using CasgemMicroservice.Services.Discount.Dtos;
 using CasgemMicroservice.Services.Discount.Models;
 using CasgemMicroservice.Shared.Dtos;
+using Microsoft.EntityFrameworkCore;
 
 namespace CasgemMicroservice.Services.Discount.Services
 {
     public class DiscountService : IDiscountService
     {
-        public Task<Response<NoContent>> CreateDiscountCouponsAsync(CreateDiscountDto createDiscountDto)
+        private readonly DapperContext _dapperContext;
+        private readonly IMapper _mapper;
+
+        public DiscountService(DapperContext dapperContext, IMapper mapper)
         {
-            throw new NotImplementedException();
+            _dapperContext = dapperContext;
+            _mapper = mapper;
         }
 
-        public Task<Response<NoContent>> DeleteDiscountCouponsAsync(int id)
+        public async Task<Response<NoContent>> CreateDiscountCouponsAsync(CreateDiscountDto createDiscountDto)
         {
-            throw new NotImplementedException();
+            var createCoupon = _mapper.Map<DiscountCoupons>(createDiscountDto);
+            createCoupon.CreatedTime = DateTime.Now;
+            await _dapperContext.DiscountCouponses.AddAsync(createCoupon);
+            await _dapperContext.SaveChangesAsync();
+            return Response<NoContent>.Success(201);
         }
 
-        public Task<Response<List<ResultDiscountDto>>> GetAllDiscountCouponsAsync()
+        public async Task<Response<NoContent>> DeleteDiscountCouponsAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _dapperContext.DiscountCouponses.FindAsync(id);
+            if (result == null)
+            {
+                return Response<NoContent>.Fail("Silinecek Kupon Bulunamadı", 404);
+            }
+            _dapperContext.DiscountCouponses.Remove(result);
+            await _dapperContext.SaveChangesAsync();
+            return Response<NoContent>.Success(204);
         }
 
-        public Task<Response<ResultDiscountDto>> GetByIdDiscountCouponsAsync(int id)
+        public async Task<Response<List<ResultDiscountDto>>> GetAllDiscountCouponsAsync()
         {
-            throw new NotImplementedException();
+            var values= await _dapperContext.DiscountCouponses.ToListAsync();
+            return Response<List<ResultDiscountDto>>.Success(_mapper.Map<List<ResultDiscountDto>>(values),200);
         }
 
-        public Task<Response<NoContent>> UpdateDiscountCouponsAsync(UpdateDiscountDto updateDiscountDto)
+        public async Task<Response<ResultDiscountDto>> GetByIdDiscountCouponsAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _dapperContext.DiscountCouponses.FindAsync(id);
+            return Response<ResultDiscountDto>.Success(_mapper.Map<ResultDiscountDto>(result),200);
+        }
+
+        public async Task<Response<NoContent>> UpdateDiscountCouponsAsync(UpdateDiscountDto updateDiscountDto)
+        {
+            var existingResponse = await _dapperContext.DiscountCouponses.FindAsync(updateDiscountDto.DiscountCouponsID);
+            if (existingResponse == null)
+            {
+                return Response<NoContent>.Fail("Güncellencek kupan bulunmadı", 404);
+            }
+            _mapper.Map(updateDiscountDto, existingResponse);
+            _dapperContext.DiscountCouponses.Update(existingResponse);
+            await _dapperContext.SaveChangesAsync();
+            return Response<NoContent>.Success(204);
         }
     }
 }
