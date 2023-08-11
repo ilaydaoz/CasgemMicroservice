@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace CasgemMicroservice.Services.Order.Controllers
+namespace CasgemMicroservice.Services.Order.Presenation.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
