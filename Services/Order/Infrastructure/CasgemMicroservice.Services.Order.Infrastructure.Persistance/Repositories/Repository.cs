@@ -1,12 +1,7 @@
 ﻿using CasgemMicroservice.Services.Order.Core.Application.Interfaces;
 using CasgemMicroservice.Services.Order.Infrastructure.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositories
 {
@@ -41,6 +36,14 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositor
         public async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
+        }
+
+        public async Task<List<T>> GetOrderById(Expression<Func<T, bool>> filter = null)
+        {
+            return await _context.Set<T>().Where(filter).ToListAsync();
+            //return filter == null ?
+            //     await _context.Set<T>().ToListAsync()
+            //     : await _context.Set<T>().Where(filter).ToListAsync(); burda veri olmazsa bütün veileri çekiyor
         }
 
         public async Task<T> UpdateAsync(T entity)

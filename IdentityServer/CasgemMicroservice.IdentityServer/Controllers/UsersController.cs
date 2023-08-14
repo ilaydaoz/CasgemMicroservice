@@ -50,5 +50,7 @@ namespace CasgemMicroservice.IdentityServer.Controllers
                 City = user.City,
          });
         }
+
+
     }
 }
