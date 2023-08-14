@@ -27,7 +27,7 @@ namespace CasgemMicroservice.Services.Order.Infrastructure.Persistance.Repositor
         }
         public async Task<T> DeleteAsync(T entity)
         {
-            _context.Set<T>().Add(entity);
+            _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();  
             return entity;
         }
