@@ -10,7 +10,7 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Features.Handlers
     public class GetByIdAddressQueryHandler : IRequestHandler<GetByIdAddressQueryRequest, ResultAdressDto>
     {
 
-        private IRepository<Address> _repository;
+        private readonly IRepository<Address> _repository;
         private IMapper _mapper;
 
         public GetByIdAddressQueryHandler(IRepository<Address> repository, IMapper mapper)

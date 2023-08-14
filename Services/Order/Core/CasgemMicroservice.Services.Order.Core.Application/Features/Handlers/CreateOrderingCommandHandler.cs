@@ -7,7 +7,7 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Features.Handlers
 {
     public class CreateOrderingCommandHandler : IRequestHandler<CreateOrderingCommandRequest>
     {
-        private IRepository<Ordering> _repository;
+        private readonly IRepository<Ordering> _repository;
 
         public Task Handle(CreateOrderingCommandRequest request, CancellationToken cancellationToken)
         {

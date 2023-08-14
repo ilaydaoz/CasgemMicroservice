@@ -10,7 +10,7 @@ namespace CasgemMicroservice.Services.Order.Core.Application.Features.Handlers
     public class GetByIdOrderingQueryHandler : IRequestHandler<GetByIdOrderingQueryRequest, ResultOrderingDto>
     {
 
-        private IRepository<Ordering> _repository;
+        private readonly IRepository<Ordering> _repository;
         private IMapper _mapper;
 
         public GetByIdOrderingQueryHandler(IRepository<Ordering> repository, IMapper mapper)
