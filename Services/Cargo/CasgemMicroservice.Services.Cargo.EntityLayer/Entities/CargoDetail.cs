@@ -11,6 +11,6 @@ namespace CasgemMicroservice.Services.Cargo.EntityLayer.Entities
         public int CargoDetailId { get; set; }
         public int OrderId { get; set; }
         public string CargoStateId { get; set; }
-        public CargoState CargoStates { get; set; }
+        public virtual CargoState? CargoStates { get; set; }
     }
 }
