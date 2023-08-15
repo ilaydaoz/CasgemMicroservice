@@ -1,2 +1,17 @@
 1-CatalogMicroservice
 2-SharedProject
+
+
+
+---Gateway------
+"Gateways API" terimi genellikle farklý sistemler arasýnda iletiþim saðlayan bir arayüzü ifade eder.
+Bu, örneðin farklý uygulamalar veya cihazlar arasýnda veri transferini kolaylaþtýrmak için kullanýlýr. 
+Bu tür bir API, veri iletiþimini yönetmek ve farklý bileþenler arasýndaki etkileþimi saðlamak amacýyla
+kullanýlan bir ara katman görevi görür.
+
+
+----Ocolet-----
+farklý hizmetler veya mikro servisler arasýnda veri iletiþimini yönetmek, yetkilendirme,
+güvenlik ve trafik yönetimi gibi iþlevleri kolaylaþtýrmak için kullanýlýr. 
+Ocelot, farklý servislerin arkasýndaki karmaþýklýðý gizleyerek istemcilerin tek bir API'ya eriþmesini saðlayabilir.
+

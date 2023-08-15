@@ -69,6 +69,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CasgemMicroservice.Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Services.Payment.WebApi", "Services\Payment\CasgemMicroservice.Services.Payment.WebApi\CasgemMicroservice.Services.Payment.WebApi.csproj", "{9F32ED68-9E42-42DF-A372-28CDECE246DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CasgemMicroservice.Gateway", "Gateways\CasgemMicroservice.Gateway\CasgemMicroservice.Gateway.csproj", "{A0B67F06-6C25-4CA9-98F4-D32DF38E9459}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{9F32ED68-9E42-42DF-A372-28CDECE246DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F32ED68-9E42-42DF-A372-28CDECE246DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F32ED68-9E42-42DF-A372-28CDECE246DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0B67F06-6C25-4CA9-98F4-D32DF38E9459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0B67F06-6C25-4CA9-98F4-D32DF38E9459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0B67F06-6C25-4CA9-98F4-D32DF38E9459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0B67F06-6C25-4CA9-98F4-D32DF38E9459}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -165,6 +171,7 @@ Global
 		{1F3B95EA-259D-4D8B-8570-5D5DC3C968AD} = {99F16346-8065-421D-9248-A73E8DEEC88A}
 		{3B6D6856-8F82-4B06-91B2-5B6A1D54C577} = {99F16346-8065-421D-9248-A73E8DEEC88A}
 		{9F32ED68-9E42-42DF-A372-28CDECE246DB} = {AAB5B06C-3778-43F1-846A-3A2515FE3D05}
+		{A0B67F06-6C25-4CA9-98F4-D32DF38E9459} = {C8B4EB55-E563-4ABB-80D9-F224B510818A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F661F97C-33B7-49C2-99A0-884E03A54700}
